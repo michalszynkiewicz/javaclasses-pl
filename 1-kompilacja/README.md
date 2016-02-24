@@ -45,6 +45,7 @@ System.out.println("tekst do wypisania");
 
 # 4. IDE
 Polecam IntelliJ IDEA. Za darmo można używać wersji Community Edition.
-Przy pomocy wydziałowego maila można ubiegać się o akademicką licencje na Ultimate Edition.
+
+Przy pomocy wydziałowego maila można ubiegać się o akademicką licencję na Ultimate Edition.
 
 https://www.jetbrains.com/idea/#chooseYourEdition
