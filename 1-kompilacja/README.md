@@ -49,3 +49,33 @@ Polecam IntelliJ IDEA. Za darmo można używać wersji Community Edition.
 Przy pomocy wydziałowego maila można ubiegać się o akademicką licencję na Ultimate Edition.
 
 https://www.jetbrains.com/idea/#chooseYourEdition
+
+
+# 5. * Maven
+Generowanie projektu:
+```bash
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app
+ -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+Kod źródłowy umieszczamy w `src/main/java`.
+Testy w `src/test/java`.
+
+Jeśli potrzebujemy jakiejś biblioteki, dodajemy ją do sekcji `dependencies` w pliku `pom.xml`.
+
+Np żeby użyć `com.google.guava:guava` dodajemy:
+```xml
+...
+<dependencies>
+  ...
+  <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>19.0</version>
+  </dependency>
+</dependencies>
+...
+```
+
+
+Wyszukiwarka bibliotek (przeszukuje standardowe repozytorium): http://search.maven.org/
