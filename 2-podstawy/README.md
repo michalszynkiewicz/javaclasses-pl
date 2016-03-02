@@ -137,6 +137,8 @@ Otwórz projekt w IntelliJ Idea (File -> Open i wybierz pom.xml z katalogu proje
 
 Wyszukaj znaczniki `todo` w projekcie i dokończ go.
 
+Dodaj następujące implementacje kształtów: `Circle`, `Square`, `Rectangle`.
+
 ## Stos i Odwrotna Notacja Polska
 
 Zaimplementuj stos - strukturę z następującymi metodami:
