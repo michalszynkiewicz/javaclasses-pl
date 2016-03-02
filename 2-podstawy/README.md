@@ -105,7 +105,9 @@ Worker w = WorkerFactory.createWorker(type);
 w.run();
 ```
 
-# 4. Zadanie: Agregator
+# 4. Zadania
+
+## Agregator
 
 Napisz program o parametrach:
 
@@ -125,3 +127,23 @@ Np:
 |------ | ----- |
 |+ 5 12 4 23 | 44|
 |* 3 12 1 | 36|
+
+## Pola figur
+
+Przy pomocy `$ git pull https://github.com/michalszynkiewicz/javaclasses-pl.git` pobierz repozytorium z materiałami do zajęć.
+W katalogu 2-podstawy/exercise znajduje się niedokończony projekt.
+
+Otwórz projekt w IntelliJ Idea (File -> Open i wybierz pom.xml z katalogu projektu)
+
+Wyszukaj znaczniki `todo` w projekcie i dokończ go.
+
+## Stos i Odwrotna Notacja Polska
+
+Zaimplementuj stos - strukturę z następującymi metodami:
+- `push` - wkłada element na stos
+- `pop` - zwraca element ostatnio odłożony na stos i usuwa go ze stosu
+- `isEmpty` - sprawdza czy stos jest pusty
+
+Implementację oprzyj na LinkedList, nie używając metody `LinkedList#pollLast`.
+
+Napisz program, który ze standardowego wejścia wczyta wyrażenie zapisane w ONP (https://pl.wikipedia.org/wiki/Odwrotna_notacja_polska)
