@@ -130,7 +130,7 @@ Np:
 
 ## Pola figur
 
-Przy pomocy `$ git pull https://github.com/michalszynkiewicz/javaclasses-pl.git` pobierz repozytorium z materiałami do zajęć.
+Przy pomocy `$ git clone https://github.com/michalszynkiewicz/javaclasses-pl.git` pobierz repozytorium z materiałami do zajęć.
 W katalogu 2-podstawy/exercise znajduje się niedokończony projekt.
 
 Otwórz projekt w IntelliJ Idea (File -> Open i wybierz pom.xml z katalogu projektu)
