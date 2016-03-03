@@ -11,8 +11,6 @@ import java.util.Map;
  */
 public class ShapeFactory {
 
-    // todo: utwórz mapę wszystkich kształtów? name -> shape ?
-
     public static Shape getShape(String name) {
         // todo
     }
