@@ -30,7 +30,7 @@ Napisz program, który wczyta ze standardowego wejścia listę liczb, wykona odp
 
 Pierwsza linia wejścia będzie zawierała listę elementów.
 Każda kolejna będzie zawierała:
-* parę liczb a b - kolejno początek(włącznie) i koniec(wyłącznie) przedziału, dla którego należy policzyć sumę
+* parę liczb `a b` - kolejno początek (włącznie) i koniec (wyłącznie) przedziału, dla którego należy policzyć sumę
 * `quit` - koniec programu
 
 Np.
