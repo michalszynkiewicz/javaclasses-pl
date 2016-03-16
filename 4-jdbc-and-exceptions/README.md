@@ -51,6 +51,10 @@ try (FileWriter fw = new FileWriter(...)) {
 ```
 Powyższa konstrukcja nosi nazwę `try-with-resources` (blok `catch` jest w niej opcjonalny).
 
+
+## Zadanie: *liczba czy nie*
+Napisz program, który tekst ze standardowego wejścia i wypisze `TAK` jeśli tekst jest liczbą, `NIE` w przeciwnym przypadku.
+
 # 2. JDBC
 JDBC to wbudowany w Javę mechanizm *rozmawiania* z bazą danych.
 
