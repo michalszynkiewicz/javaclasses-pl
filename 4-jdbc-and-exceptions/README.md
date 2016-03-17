@@ -1,4 +1,4 @@
-# 1. Wyjątaki
+# 1. Wyjątki
 W Javie błędne wykonanie jsest sygnalizowane wyjątkami. Wyjątki są podklasami klasy `Exception`
 
 Wyjątek może być *kontrolowany* (zwykły) lub *niekontrolowany* (runtime);
