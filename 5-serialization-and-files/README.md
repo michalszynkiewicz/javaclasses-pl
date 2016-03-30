@@ -38,7 +38,7 @@ Obiekt, który chcemy zserializować musi implementować interfejs `Serializable
 https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html
 
 
-## \*Serializacja do JSON
+## Serializacja do JSON
 Opisana wyżej serializacja daje w wyniku dane binarne, co za tym idzie, nieczytelne dla człowiekal
 
 Jeśli chcemy serializować obiekty do formy czytelnej dla człowieka możemy użyć np formatu XML lub JSON.
