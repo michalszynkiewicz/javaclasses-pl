@@ -63,7 +63,10 @@ Wystarczy utworzyć obiekt klasy `ObjectMapper` i użyć jego metod `readValue` 
 
 # Zadania
 
-## 1. Zapisz i odczytaj
+## 1. Tekst do pliku
+Napisz program który utworzy plik /tmp/tresczadania.txt i zapisze do niego treść tego zadania.
+
+## 2. Zapisz i odczytaj
 Utwórz klasę `Container` z dwoma polami: `date` typu `Date` oraz `content` typu `String`.
 
 Niech plikiem, na którym będzie działał program będzie `/tmp/container.bin`.
@@ -78,5 +81,5 @@ Przy pierwszym uruchomieniu nie będzie pliku. W tym wypadku program powinien ut
 
 Uruchom program kilkukrotnie. Obejrzyj zawartość pliku.
 
-## 2. Zapisz i odczytaj JSON
+## 3. Zapisz i odczytaj JSON
 Zastąp zapisywanie i odczytywanie danych w formie binarnej, zapisem i odczytem w postaci tekstowej (np JSON)
