@@ -72,9 +72,13 @@ Utwórz klasę `Container` z dwoma polami: `date` typu `Date` oraz `content` typ
 Niech plikiem, na którym będzie działał program będzie `/tmp/container.bin`.
 
 Napisz program:
+
 1. który wczyta z pliku i zdeserializuje obiekt typu `Container`
+
 2. wypisze na ekran wartości pól z datą i zawartością,
+
 3. utworzy nowy obiekt typu `Container`  (lub użyje ponownie istniejący), ustawi datę na aktualną i tekst na dowolny.
+
 4. zapisze obiekt z punktu 3. do pliku.
 
 Przy pierwszym uruchomieniu nie będzie pliku. W tym wypadku program powinien utworzyć plik i pominąć kroki 1. i 2.
