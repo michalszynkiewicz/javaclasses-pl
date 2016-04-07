@@ -31,8 +31,10 @@ Do synchronizacji służą np *locki*: https://docs.oracle.com/javase/tutorial/e
 
 Alternatywą dla *locków* jest użycie `synchronized`: https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html, https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html
 
-### 1. Runnable i Thread
+### 1. Wyścig
 Utwórz implementację klasy `Runnable`. W metodzie `run()` wypisz na ekran nazwę aktualnego wątku (`Thread.currentThread().getName()`)
+
+https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#Thread-java.lang.Runnable-java.lang.String-
 
 Użyj konstruktora wątka poniżej żeby utworzyć 3 wątki z określonymi nazwami (np. wątek 1, wątek 2, wątek 3) wykorzystujące w/w implementację `Runnable`
 
