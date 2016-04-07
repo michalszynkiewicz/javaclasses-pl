@@ -40,6 +40,9 @@ https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#Thread-java.lang
 
 Uruchom program.
 
+Zmodyfikuj swoją implementację Runnable tak, żeby w pętli wypisywała 100 razy:
+nazwa-wątka: numer-iteracji-pętli
+
 ### 2. Silnia
 
 Napisz program który iteracyjnie oblicza silnię.
