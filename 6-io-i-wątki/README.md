@@ -43,18 +43,10 @@ Uruchom program.
 Zmodyfikuj swoją implementację Runnable tak, żeby w pętli wypisywała 100 razy:
 nazwa-wątka: numer-iteracji-pętli
 
-### 2. Silnia
+### 2. Zadanie domowe: Silnia
 
 Napisz program który iteracyjnie oblicza silnię.
 
 Następnie przerób go tak, żeby dzielił przedział 1..n na 5 kawałków i obliczał iloczyny tych kawałków w 5 wątkach.
 
 Następnie wypisz na ekran wynik.
-
-## II. Executor
-Alternatywą dla bezpośredniego użycia `Thread` jest wykorzystanie `Executor` i `ExecutorService`:
-https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html
-
-
-# Zadanie domowe
-Przerób rozwiązania zadań z B.I tak, żeby korzystały z Executor
