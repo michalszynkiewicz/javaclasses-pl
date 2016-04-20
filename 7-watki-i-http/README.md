@@ -44,14 +44,31 @@ curl -d *dane do wysłania* *adres*
 
 Do wywołania metody GET można wykorzystać przeglądarkę, `wget` albo `curl`.
 
+Zgodnie z *Single Responsibility Principle* [1], wydziel listę przechowującą dane oraz metody do "zapamiętywania" i "wyciągania" elementów do osobnej klasy.
+
+
+[1] https://en.wikipedia.org/wiki/Single_responsibility_principle, https://pl.wikipedia.org/wiki/Zasada_jednej_odpowiedzialno%C5%9Bci
+
 ### simple jsonREST
+
 Utwórz klasę `Entity` z polami `id`, `firstname`, `lastname`.
 
 Zmodyfikuj rozwiązanie powyższego zadania tak, aby:
 - serwlet deserializował tekst przychodzący (w POST) do obiektu klasy Entity.
 - metoda GET zwracała tekst zserializowany do JSONa.
 
-### jsonREST
-Zmodyfikuj rozwiązanie poprzedniego zadania tak, żeby dane były zapisywane do bazy danych.
+Do serializacji i deserializacji JSONa możesz użyć biblioteki opisanej w https://github.com/michalszynkiewicz/javaclasses-pl/tree/master/5-serialization-and-files
 
-Dodaj obsługę zapytania `GET /*id*`, które zwraca tylko jeden element kolekcji, ten o zadanym identyfikatorze.
+### * jsonREST
+Dodaj obsługę zapytań:
+- `GET /*id*`, które zwraca tylko jeden element kolekcji, ten o zadanym identyfikatorze
+- `DELETE /*id*`, które usuwa element kolekcji o zadanym identyfikatorze
+
+Zmodyfikuj rozwiązanietak, żeby dane były zapisywane do bazy danych.
+
+### Static content server
+Napisz program, który przyjmuje jeden argument wejściowy - ścieżkę do katalogu.
+Następnie, na porcie 8081, wystawi servlet, który będzie "podawał" pliki leżące w danym katalogu.
+
+Np, dla katalogu z zawartością: `index.html`, `home.html`, `myphoto.jpg` i zapytania:
+`GET http://localhost:8081/index.html`, zwróci zawartość pliku `index.html` (analogicznie dla `GET .../home.html` i `GET .../myphoto.jpg`)
