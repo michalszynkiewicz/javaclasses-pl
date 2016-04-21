@@ -29,6 +29,8 @@ Następnie wykonaj w konsoli polecenie:
 $ mvn javadoc:javadoc
 ```
 
+Maven: http://ftp.ps.pl/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+
 Poszukaj w katalogu target wygenerowanych plików html. Otwórz wygenerowany *javadoc* w przeglądarce.
 
 
