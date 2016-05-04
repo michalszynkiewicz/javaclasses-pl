@@ -1,5 +1,7 @@
 # JUnit - c.d.
 
+[//]: # ( TODO: ZA TRUDNE ZADANIE!!! )
+
 Patrz punkt Testowanie: JUnit w zajęciac 8-junit-i-javadoc
 
 ## TDD
@@ -17,6 +19,7 @@ http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd
 
 
 ## Zadanie: Zależności
+
 
 Korzystając z TDD rozwiąż poniższe zadanie.
 
