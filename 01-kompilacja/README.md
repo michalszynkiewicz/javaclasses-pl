@@ -185,6 +185,7 @@ Np:
 99 4 5
 8 0 3 5
 -12 1 3 4
+-99
 ```
 
 Wyjście dla powyższego przykładu: `-12`
