@@ -1,4 +1,32 @@
-# 1. Klasy i obiekty
+# 1. Testowanie
+# Testowanie: JUnit
+
+### Ogólne zasady:
+- Testujemy głównie przypadki brzegowe.
+- Metody testujące, podobnie jak kod powinny być krótkie i łatwe do czytania
+- jedna metoda testująca powinna testować tylko jeden przypadek (pozwala to łatwiej znaleźć problem)
+- Z reguły do przetestowania metod jednej klasy, piszemy jedną klasę testującą.
+
+
+## JUnit
+Quickstart: https://github.com/junit-team/junit4/wiki/Getting-started
+
+Aby korzystać z junit należy dodać go do `<dependencies>` w `pom.xml`.
+
+### Metody testujące
+Metody testujące określone zachowania adnotujemy `@Test`.
+Jedna z konwencji mówi, żeby ich nazwy zaczynać od `should`. Np:
+```java
+@Test
+public void shouldAddValidElement(){...}
+```
+
+### Inicjalizacja testuj
+Jeśli potrzebujemy wykonać jakieś przygotowania dla każdego z testów w danej klasie testującej:
+- jeśli inicjalizacja ma być wykonana raz dla całej klasy, tworzymy publiczną, statyczną metodę inicjalizującą i adnotujemy ją `@BeforeClass`
+- jeśli inicjalizacja ma być wykonana dla każdej z metod testujących, tworzymy publiczną metodę inicjalizującą i adnotujemy ją `@Before`
+
+# 2. Klasy i obiekty
 Definicja klasy:
 
 ```java
@@ -21,7 +49,7 @@ MojaKlasa mojObiekt = new MojaKlasa();
 
 Przyjmijmy na razie, że każdą klasę tworzymy w osobnym pliku.
 
-# 2. Interfejsy
+# 3. Interfejsy
 
 Interfejs to taki kontrakt. Dzięki interfejsom, możemy pisać części programów niezależnie od konkretnej implementacji. Pozwala to łatwo zmieniać implementację i dokładać nowe implementacje.
 
@@ -51,7 +79,7 @@ public class MojaKlasa2 implements MojInterfejs {
 }
 ```
 
-# 3. Fabryka
+# 4. Fabryka
 Przykładem wzorca, w którym wykorzystujemy interfejsy jest Fabryka (Factory), która działa w następujący sposób:
 
 
@@ -105,7 +133,7 @@ Worker w = WorkerFactory.createWorker(type);
 w.run();
 ```
 
-# 4. Zadania
+# 5. Zadania
 
 ## Agregator
 
