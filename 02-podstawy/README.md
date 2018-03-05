@@ -62,7 +62,7 @@ public interface Worker {
 ```
 
 ```java
-public interface LocalWorker {
+public class LocalWorker {
   public void run() {
     ...
   }
@@ -70,7 +70,7 @@ public interface LocalWorker {
 ```
 
 ```java
-public interface RemoteWorker {
+public class RemoteWorker {
   public void run() {
     ...
   }
@@ -127,17 +127,6 @@ Np:
 |------ | ----- |
 |+ 5 12 4 23 | 44|
 |* 3 12 1 | 36|
-
-## Pola figur
-
-Przy pomocy `$ git clone https://github.com/michalszynkiewicz/javaclasses-pl.git` pobierz repozytorium z materiałami do zajęć.
-W katalogu 2-podstawy/exercise znajduje się niedokończony projekt.
-
-Otwórz projekt w IntelliJ Idea (File -> Open i wybierz pom.xml z katalogu projektu)
-
-Wyszukaj znaczniki `todo` w projekcie i dokończ go.
-
-Dodaj następujące implementacje kształtów: `Circle`, `Square`, `Rectangle`.
 
 ## Stos i Odwrotna Notacja Polska
 
