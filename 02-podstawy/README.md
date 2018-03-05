@@ -21,7 +21,7 @@ Jedna z konwencji mówi, żeby ich nazwy zaczynać od `should`. Np:
 public void shouldAddValidElement(){...}
 ```
 
-### Inicjalizacja testuj
+### Inicjalizacja testu
 Jeśli potrzebujemy wykonać jakieś przygotowania dla każdego z testów w danej klasie testującej:
 - jeśli inicjalizacja ma być wykonana raz dla całej klasy, tworzymy publiczną, statyczną metodę inicjalizującą i adnotujemy ją `@BeforeClass`
 - jeśli inicjalizacja ma być wykonana dla każdej z metod testujących, tworzymy publiczną metodę inicjalizującą i adnotujemy ją `@Before`
