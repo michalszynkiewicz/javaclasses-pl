@@ -7,7 +7,6 @@
 - jedna metoda testująca powinna testować tylko jeden przypadek (pozwala to łatwiej znaleźć problem)
 - Z reguły do przetestowania metod jednej klasy, piszemy jedną klasę testującą.
 
-
 ## JUnit
 Quickstart: https://github.com/junit-team/junit4/wiki/Getting-started
 
@@ -25,6 +24,44 @@ public void shouldAddValidElement(){...}
 Jeśli potrzebujemy wykonać jakieś przygotowania dla każdego z testów w danej klasie testującej:
 - jeśli inicjalizacja ma być wykonana raz dla całej klasy, tworzymy publiczną, statyczną metodę inicjalizującą i adnotujemy ją `@BeforeClass`
 - jeśli inicjalizacja ma być wykonana dla każdej z metod testujących, tworzymy publiczną metodę inicjalizującą i adnotujemy ją `@Before`
+
+### Przykładowy `pom.xml` z JUnit
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany</groupId>
+  <artifactId>contact-book</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <!-- definicja wersji Javy -->
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- fajna bibliteka do sprawdzania czy wyniki spełniają oczekiwane warunki,
+    więcej: http://joel-costigliola.github.io/assertj/ -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.9.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
 
 # 2. Klasy i obiekty
 Definicja klasy:
@@ -79,82 +116,27 @@ public class MojaKlasa2 implements MojInterfejs {
 }
 ```
 
-# 4. Fabryka
-Przykładem wzorca, w którym wykorzystujemy interfejsy jest Fabryka (Factory), która działa w następujący sposób:
+# 4. Zadania
 
+## Kontakty
+Napisz program, który przechowuje dane kontaktowe.
+Kontakt powinien składać się z następujących danych:
+- nazwa (np imię i nazwisko)
+- telefon
+- email
+- adres
 
-```java
-public interface Worker {
-  void run();
-}
-```
+Po uruchomieniu, program powinien w pętli wczytywać od użytkownika i obsługiwać
+następujące polecenia:
+- dodaj -
+- zmien
+- usun
+- wyszukaj
 
-```java
-public class LocalWorker {
-  public void run() {
-    ...
-  }
-}
-```
+Program powinien składać się z co najmniej trzech klas: `Kontakt`, `Baza` i `Aplikacja`. `Aplikacja` powinna mieć zdefiniowaną metodę `main`, powinna też obsługiwać komunikację z użytkownikiem.
+`Baza` powinna przechowywać wszystkie kontakty i dostarczać metod do (m.in.) dodawania, usuwania i wyszukiwania kontaktów.
 
-```java
-public class RemoteWorker {
-  public void run() {
-    ...
-  }
-}
-```
-
-```java
-public enum WorkerType {
-  LOCAL,
-  DISTRIBUTED
-}
-```
-
-```java
-public class WorkerFactory {
-  public static Worker createWorker(WorkerType type) {
-    switch(type) {
-      case LOCAL:
-        return new LocalWorker();
-      case DISTRIBUTED:
-        return new RemoteWorker();
-      default:
-        throw new IllegalArgumentException("Unsupported worker type: " + type);
-    }
-  }
-}
-```
-
-Sposób użycia:
-```java
-Worker w = WorkerFactory.createWorker(type);
-w.run();
-```
-
-# 5. Zadania
-
-## Agregator
-
-Napisz program o parametrach:
-
-typ_agregacji a1, a2, a3, a4, a5, a6, a7, a8, a9...
-
-gdzie typ_agregacji należy do zbioru {+, *}
-
-
-W zależności od typu agregacji (+, *), program ma wypisać zagregowane (zsumowane, pomnożone) argumenty.
-
-
-Żeby ułatwić rozszerzanie programu, utwórz interfejs (interface) Aggregator i dwie implementacje, wybierane na podstawie typu agregacji.
-
-Np:
-
-| Wejście: | Wyjście |
-|------ | ----- |
-|+ 5 12 4 23 | 44|
-|* 3 12 1 | 36|
+Napisz testy JUnitowe do programu tak, żeby pokrycie testami (coverage) klasy `Baza` wynosiło 100%. Pokrycie testami można sprawdzić uruchamiając test przez `Run ... with Coverage`.
 
 ## Stos i Odwrotna Notacja Polska
 
@@ -166,3 +148,5 @@ Zaimplementuj stos - strukturę z następującymi metodami:
 Implementację oprzyj na LinkedList, nie używając metody `LinkedList#pollLast`.
 
 Napisz program, który ze standardowego wejścia wczyta wyrażenie zapisane w ONP (https://pl.wikipedia.org/wiki/Odwrotna_notacja_polska)
+
+Przetestuj kod wykorzystując testy JUnitowe.
