@@ -128,10 +128,10 @@ Kontakt powinien składać się z następujących danych:
 
 Po uruchomieniu, program powinien w pętli wczytywać od użytkownika i obsługiwać
 następujące polecenia:
-- dodaj -
-- zmien
-- usun
-- wyszukaj
+- dodaj - prosi użytkownika o podanie danych kontaktu, następnie dodaje kontakt do bazy
+- zmien - pobiera takie same dane jak dodaj, zmienia kontakt o danej nazwie
+- usun - pobiera od użytkownika nazwę kontaktu i usuwa kontakt o danej nazwie
+- wyszukaj - szuka kontaktu po nazwie lub części nazwy.
 
 Program powinien składać się z co najmniej trzech klas: `Kontakt`, `Baza` i `Aplikacja`. `Aplikacja` powinna mieć zdefiniowaną metodę `main`, powinna też obsługiwać komunikację z użytkownikiem.
 `Baza` powinna przechowywać wszystkie kontakty i dostarczać metod do (m.in.) dodawania, usuwania i wyszukiwania kontaktów.
