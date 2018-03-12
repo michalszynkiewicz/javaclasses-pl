@@ -150,3 +150,43 @@ Implementację oprzyj na LinkedList, nie używając metody `LinkedList#pollLast`
 Napisz program, który ze standardowego wejścia wczyta wyrażenie zapisane w ONP (https://pl.wikipedia.org/wiki/Odwrotna_notacja_polska)
 
 Przetestuj kod wykorzystując testy JUnitowe.
+
+## C System modułowy
+
+Na system składa się wiele modułów. Niektóre moduły zależą od siebie. Moduł X zależny od modułu Y może zostać uruchomiony dopiero, gdy moduł Y będzie uruchomiony.
+
+Napisz program, który wczyta definicje modułów i poda prawidłową kolejność uruchamiania modułów lub zwróci błąd.
+
+Każda z linii wejścia programu będzie składała się z jednej definicji modułu: [nazwa_modułu] moduł_od_którego_zależy_1,moduł_od_którego_zależy_2,moduł_od_którego_zależy_3
+
+Np.
+
+Wejście:
+
+modułA
+modułB
+modułC modułA, modułB
+Przykładowe wyjście:
+
+modułA
+modułB
+modułC
+
+# Zadanie domowe
+## Wartość wielomianu
+
+Utwórz mavenowy projekt a w nim klasę zawierającą metodę obliczającą wartość
+wielomianu w zadanym punkcie:
+```
+public double polynomialValue(double x, double... coefficients) {
+  // parametr zdefiniowany jak wyżej pozwala na dostęp taki jak tablica
+  // z drugiej strony daje się wywoływać np polynomialValue(1., 3., 4., 4., 2.);
+  ...
+}
+```
+Podziel kod na metody tak, by żadna metoda nie miała więcej niż 5 linii kodu.
+
+Zaimplementuj testy.
+
+Wywołanie `polynomialValue(1., 3., 4., 4., 2.)` odpowiada obliczeniu w punkcie *1* wartości wielomianu *3 + 4x + 4x<sup>2</sup> + 2x<sup>3</sup>*
+
