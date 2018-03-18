@@ -1,31 +1,37 @@
 # 1. Wspólne zadanie
 
-## A. DFS: Minimalny osiągalny węzeł
-Zaimplementować DFS i znaleźć najmniejszy element osiągalny z `0` w grafie.
+## A. Zwiedzanie skierowanego grafu acyklicznego (DAG)
+Napisz klasę węzła `Node`. Węzeł powinien mieć nazwę typu `String` i listę sąsiadów.
 
-Wejście:
-[wartość wierzchołka i] [lista sąsiadów wierzchołka i]
+Klasa powinna implementować metodę `void walkThrough(Visitor visitor)`,
+ gdzie `Visitor` jest interfejsem implementującym metodę
+`void visit(Node node)`.
 
-Np:
-```
-345 1,4
-53 0,5
-0
-99 4,5
-8 0,3,5
--12 1,3,4
-```
 
-Wyjście dla powyższego przykładu: `-12`
+Wywołanie `walkThrough(visitor)` na pewnym węźle *v* powinno zaskutkować wykonaniem
+`visitor.visit` dla każdego z węzłów osiągalnych z *v*.
 
-## B. DFS: Visitor i ilość osiągalnych węzłów
-Zmodifykować implementację tak, aby wykorzystywała wzorzec Visitor ("odwiedzający") (https://en.wikipedia.org/wiki/Visitor_pattern)
 
-Wykorzystać wprowadzone zmiany aby obliczyć ilość wierzchołków dostępnych z wierzchołka `0`.
+Przetestuj jej działanie przy pomocy testów.
 
 # 2. Samodzielne
 
-## A. Suma przedziału
+## A. Dziedziczenie
+Napisz abstrakcyjną klasę `Animal` z:
+- polem `name` oraz getterem i setterem do niego (patrz https://docs.oracle.com/javase/tutorial/javabeans/writing/properties.html)
+- abstrakcyjną metoda `String moves()` zwracającą "walks", "flies" albo "swims" w zależności od tego w jaki sposób porusza się zwierzę
+- abstrakcyjną metodą `String eatsAsAChild()` zwracającą "milk" albo "who knows?" w zależności od tego co jedzą małe danego gatunku
+
+
+Utwórz klasy `Mammal`, `Bird` i `Fish` dziedziczące po `Animal` zawierające domyślne implementacje `moves` i `eatsAsAChild`.
+
+
+Utwórz klasy `Bear`, `Whale`, 'Pigeon', `Penguin` i `Shark` dziedziczące po odpowiednich klasach.
+
+
+Utwórz testy sprawdzające wartości zwracane przez `moves` i `eatsAsAChild` dla instancji powyższych klas.
+
+## B. Suma przedziału
 Napisz program, który wczyta ze standardowego wejścia listę liczb, wykona odpowiedni preprocessing, a następnie w czasie stały będzie umiał odpowiedzieć jaka jest suma elementów danego przedziału.
 
 Pierwsza linia wejścia będzie zawierała listę elementów.
