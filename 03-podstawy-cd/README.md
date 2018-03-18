@@ -12,7 +12,7 @@ Wywołanie `walkThrough(visitor)` na pewnym węźle *v* powinno zaskutkować wyk
 `visitor.visit` dla każdego z węzłów osiągalnych z *v*.
 
 
-Przetestuj jej działanie przy pomocy testów.
+Przetestuj jej działanie przy pomocy testów dla `Visitor`a zbierającego nazwy osiągalnych węzłów.
 
 # 2. Samodzielne
 
@@ -30,6 +30,11 @@ Utwórz klasy `Bear`, `Whale`, 'Pigeon', `Penguin` i `Shark` dziedziczące po od
 
 
 Utwórz testy sprawdzające wartości zwracane przez `moves` i `eatsAsAChild` dla instancji powyższych klas.
+
+### A' Enum
+Zmień rozwiązanie tak, żeby metody `moves` i `eatsAsAChild` zwracały wartości typu wyliczeniowego (enum).
+
+Patrz https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
 
 ## B. Suma przedziału
 Napisz program, który wczyta ze standardowego wejścia listę liczb, wykona odpowiedni preprocessing, a następnie w czasie stały będzie umiał odpowiedzieć jaka jest suma elementów danego przedziału.
