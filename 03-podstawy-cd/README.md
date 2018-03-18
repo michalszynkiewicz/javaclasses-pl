@@ -26,7 +26,7 @@ Napisz abstrakcyjną klasę `Animal` z:
 Utwórz klasy `Mammal`, `Bird` i `Fish` dziedziczące po `Animal` zawierające domyślne implementacje `moves` i `eatsAsAChild`.
 
 
-Utwórz klasy `Bear`, `Whale`, 'Pigeon', `Penguin` i `Shark` dziedziczące po odpowiednich klasach.
+Utwórz klasy `Bear`, `Whale`, `Pigeon`, `Penguin` i `Shark` dziedziczące po odpowiednich klasach.
 
 
 Utwórz testy sprawdzające wartości zwracane przez `moves` i `eatsAsAChild` dla instancji powyższych klas.
