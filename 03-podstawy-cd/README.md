@@ -36,30 +36,15 @@ Zmień rozwiązanie tak, żeby metody `moves` i `eatsAsAChild` zwracały wartoś
 
 Patrz https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
 
-## B. Suma przedziału
-Napisz program, który wczyta ze standardowego wejścia listę liczb, wykona odpowiedni preprocessing, a następnie w czasie stały będzie umiał odpowiedzieć jaka jest suma elementów danego przedziału.
+## Zadanie domowe: suma przedziału
+Napisz klasę która w konstruktorze przyjmie listę liczb typu Double i będzie implementowała metodę `double subSum(int from, int to)` zwracającą sumę elementów od indeksu `from` (włącznie) do `to` (wyłącznie).
 
-Pierwsza linia wejścia będzie zawierała listę elementów.
-Każda kolejna będzie zawierała:
-* parę liczb `a b` - kolejno początek (włącznie) i koniec (wyłącznie) przedziału, dla którego należy policzyć sumę
-* `quit` - koniec programu
 
-Np.
+W konstruktorze klasa powinna przygotować odpowiednią strukturę żeby metoda `subSum` działała w czasie stałym.
 
-Wejście:
-```
-6 4 3 3 5 7 4 2
-4 5
-0 0
-0 1
-1 4
-quit
-```
+Napisz testy sprawdzające poprawność obliczania sumy. Sprawdź, między innymi, czy prawidłowe wartości są zwracane dla pustego przedziału i dla całej.
 
-Wyjście:
-```
-5
-0
-6
-10
-```
+Napisz również test wydajnościowy, który wygeneruje tablice z milionem losowych elementów i sprawdzi czy 1000 odpytań o wartości sumy podprzedziałów (1, 1_000_000 - 1), (2, 1_000_000 - 2), ... nie zajmie więcej niż 500 ms.
+
+
+Np. dla listy: `6, 4, 3, 3, 5, 7, 4, 2` suma przedziału `(4, 5)` wynosi 5, a przedziału `(0, 0)` wynosi 0.
