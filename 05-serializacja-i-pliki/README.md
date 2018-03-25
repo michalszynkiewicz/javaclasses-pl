@@ -45,14 +45,14 @@ Jeśli chcemy serializować obiekty do formy czytelnej dla człowieka możemy u�
 
 Dobrą i szybką biblioteką do przetwarzania JSONa jest jackson.
 
-Aby dodać jacksona do projektu mavenowego wystarczy dodać zależność:
+Aby dodać jacksona do projektu mavenowego wystarczy dodać zależność (najnowszą wersję zależności znajdź na http://search.maven.org):
 
 ```xml
   <dependencies>
      <dependency>
          <groupId>com.fasterxml.jackson.core</groupId>
          <artifactId>jackson-databind</artifactId>
-         <version>2.7.3</version>
+         <version>...</version>
      </dependency>
   </dependencies>
 ```
@@ -71,19 +71,50 @@ Utwórz klasę `Container` z dwoma polami: `date` typu `Date` oraz `content` typ
 
 Niech plikiem, na którym będzie działał program będzie `/tmp/container.bin`.
 
-Napisz program:
+Napisz program, który:
 
-1. który wczyta z pliku i zdeserializuje obiekt typu `Container`
+1. jeśli plik istnieje, wczyta z pliku i zdeserializuje obiekt typu `Container`, a następnie wypisze na ekran wartości pól z datą i zawartością,
 
-2. wypisze na ekran wartości pól z datą i zawartością,
+2. utworzy nowy obiekt typu `Container`  (lub użyje ponownie istniejący), ustawi datę na aktualną i tekst na dowolny.
 
-3. utworzy nowy obiekt typu `Container`  (lub użyje ponownie istniejący), ustawi datę na aktualną i tekst na dowolny.
-
-4. zapisze obiekt z punktu 3. do pliku.
+3. zapisze obiekt z punktu 2. do pliku.
 
 Przy pierwszym uruchomieniu nie będzie pliku. W tym wypadku program powinien utworzyć plik i pominąć kroki 1. i 2.
 
 Uruchom program kilkukrotnie. Obejrzyj zawartość pliku.
 
 ## 3. Zapisz i odczytaj JSON
-Zastąp zapisywanie i odczytywanie danych w formie binarnej, zapisem i odczytem w postaci tekstowej (np JSON)
+Zastąp zapisywanie i odczytywanie danych w formie binarnej, zapisem i odczytem w postaci tekstowej jako JSON.
+Sprawdź co jest w pliku.
+
+## 4. Shell
+Napisz prosty shell.
+Program powinien pobierać od użytkownika następujące komendy:
+
+- `pwd` - wypisuje ścieżkę do aktualnego katalogu
+- `ls` - wypisuje katalogi i pliki z aktualnego katalogu
+- `cd nazwa_katalogu` - zmienia aktualny katalog na zadany
+- * `ls wyrażenie` - wypisuje katalogi i pliki z danego katalogu, których nazwy spełniają zadane wyrażenie (patrz: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+- * `cat nazwa_pliku` - wypisuje na ekran zawartość danego pliku
+
+Rozwiązaniem zadania niech będzie klasa EasyShell. Klasa powinna mieć pole `workingDirectory` ustawione początkowo na aktualny katalog (katalog, w którym uruchomiono program).
+
+Do rozwiązania można użyć albo *nowych* klas z `java.nio` - `Path` i `Files`, albo oprzeć je na `File`.
+
+# Zadanie domowe
+Napisz program, który uruchomiony w pewnym katalogu utworzy plik index.json zawierający listę elementów danego katalogu
+opisaną w następujący sposób:
+```json
+[
+{
+  "name": "src",
+  "type": "directory"
+},
+{
+  "name": "pom.xml",
+  "type": "file"
+}
+]
+```
+
+Napisz test do rozwiązania. Test powinien utworzyć katalog a w nim kilka plików i katalogów i sprawdzić czy index.json generowany dla niego jest prawidłowy.
