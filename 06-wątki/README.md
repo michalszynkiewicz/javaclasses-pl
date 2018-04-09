@@ -76,3 +76,10 @@ JPA potrzebuje pliku konfiguracyjnego `META-INF/persistence.xml` podobnego do:
   </persistence-unit>
 </persistence>
 ```
+
+Pracując w "normalnej" aplikacji (nie na serwerze), być może będziesz musiał/a otworzyć i zamknąć transakcję "ręcznie":
+```java
+entityManager.getTransaction().begin();
+...
+entityManager.getTransaction().commit();
+```
