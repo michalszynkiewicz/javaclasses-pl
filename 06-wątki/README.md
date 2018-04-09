@@ -1,22 +1,4 @@
-# A. IO
-
-### 0. Dokończyć zadanie sprzed tygodnia
-
-### 1. easy shell
-Napisz prosty shell.
-Program powinien pobierać od użytkownika następujące komendy:
-
-- `pwd` - wypisuje ścieżkę do aktualnego katalogu
-- `ls` - wypisuje katalogi i pliki z aktualnego katalogu
-- `cd nazwa_katalogu` - zmienia aktualny katalog na zadany
-- * `ls wyrażenie` - wypisuje katalogi i pliki z danego katalogu, których nazwy spełniają zadane wyrażenie (patrz: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
-- * `cat nazwa_pliku` - wypisuje na ekran zawartość danego pliku
-
-Rozwiązaniem zadania niech będzie klasa EasyShell. Klasa powinna mieć pole `workingDirectory` ustawione początkowo na aktualny katalog (katalog, w którym uruchomiono program).
-
-Do rozwiązania można użyć albo *nowych* klas z `java.nio` - `Path` i `Files`, albo oprzeć je na `File`.
-
-# B. Wątki
+# IO
 
 ## I. Stare
 
@@ -31,6 +13,10 @@ Do synchronizacji służą np *locki*: https://docs.oracle.com/javase/tutorial/e
 
 Alternatywą dla *locków* jest użycie `synchronized`: https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html, https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html
 
+## II. Executor
+Alternatywą dla bezpośredniego użycia `Thread` jest wykorzystanie `Executor` i `ExecutorService`:
+https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html
+
 ### 1. Wyścig
 Utwórz implementację klasy `Runnable`. W metodzie `run()` wypisz na ekran nazwę aktualnego wątku (`Thread.currentThread().getName()`)
 
@@ -43,7 +29,13 @@ Uruchom program.
 Zmodyfikuj swoją implementację Runnable tak, żeby w pętli wypisywała 100 razy:
 nazwa-wątka: numer-iteracji-pętli
 
-### 2. Zadanie domowe: Silnia
+Co się zmieni jeśli na początku każdej iteracji pętli dodasz `Thread.sleep(10)`.
+
+## 2. Wyścig + Executor
+Przerób rozwiązanie zadania *Wyścig* tak, żeby korzystały z Executor.
+W rozwiązaniu tego zadania wątek może mieć automatycznie wygenerowaną nazwę.
+
+### 3. Silnia
 
 Napisz program który iteracyjnie oblicza silnię.
 

@@ -1,14 +1,5 @@
 # Wątki
 
-## Omówienie zadań domowych
-
-## Executor
-Alternatywą dla bezpośredniego użycia `Thread` jest wykorzystanie `Executor` i `ExecutorService`:
-https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html
-
-## Zadanie
-Przerób rozwiązanie zadania *Wyścig* z poprzedniego tygodnia tak, żeby korzystały z Executor
-
 # HTTP i servlety
 
 Najłatwiej "wystawić" servlet http korzystając z jednego z serwerów webowych.
@@ -72,3 +63,21 @@ Następnie, na porcie 8081, wystawi servlet, który będzie "podawał" pliki le�
 
 Np, dla katalogu z zawartością: `index.html`, `home.html`, `myphoto.jpg` i zapytania:
 `GET http://localhost:8081/index.html`, zwróci zawartość pliku `index.html` (analogicznie dla `GET .../home.html` i `GET .../myphoto.jpg`)
+
+# * Log Aggreagtor - dodaktowe zadanie domowe (bez punktów)
+Poczytaj trochę o RESTful Web-Services i JAX-RS, np :
+- https://en.wikipedia.org/wiki/Representational_state_transfer
+- https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services
+- http://yarpo.pl/2012/07/29/rest-ciekawszy-sposob-na-komunikacje-client-server/
+- https://docs.oracle.com/javaee/7/tutorial/jaxrs003.htm#GIPZZ
+
+Utwórz system zbierający wpisy i udostępniający je przez RESTowe API.
+
+Projekt powinien wykorzystywać Spring Boota i wystawiać RESTowe API napisane przy użyciu JAX-RS.
+Szkielet projektu możesz wygenerować korzystając z https://start.spring.io/ dodając do *dependencies* Jersey (JAX-RS).
+
+Obsłuż następujące zapytania:
+- `GET <adres serwera>:<port>/log-entries` - pobierające wszystkie wpisy zapisane do tej pory
+- `POST <adres serwera>:<port>/log-entries` - wstawiający nowy wpis
+
+Dane mogą być przechowywane w pamięci (tj jako pole w jednej z klas projektu).
