@@ -1,5 +1,7 @@
 # IO
 
+https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html
+
 ## I. Stare
 
 Jeśli chcemy coś uruchomić w nowym wątku, tworzymy obiekt implementujący `Runnable`, podajemy go w konstruktorze `Thread` i uruchamiamy przez `Thread#start()`.
