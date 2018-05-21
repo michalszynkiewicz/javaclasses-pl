@@ -121,3 +121,72 @@ $(document).ready(function() {
 - [Angular](https://angular.io/tutorial)
 - [React](https://reactjs.org/)
 - ...
+
+# [WebSockety](https://en.wikipedia.org/wiki/WebSocket)
+
+Poniżej przykład w Jetty. pokazuje niezbyt ładne zbieranie websocketowych sesji do statycznej zmiennej. Można je potem wykorzystać, żeby rozesłać jakąś wiadomość do wszystkich połączonych klientów.
+
+```java
+public static class MyWebSocketServlet extends WebSocketServlet {
+
+        @Override
+        public void configure(WebSocketServletFactory webSocketServletFactory) {
+            webSocketServletFactory.register(WSListener.class);
+        }
+    }
+
+    public static class WSListener implements WebSocketListener {
+
+        public static List<Session> wsSessions = Collections.synchronizedList(new ArrayList<>());
+
+        private Session session;
+
+        @Override
+        public void onWebSocketBinary(byte[] bytes, int i, int i1) {
+        }
+
+        @Override
+        public void onWebSocketText(String s) {
+            System.out.println(s);
+        }
+
+        @Override
+        public void onWebSocketClose(int i, String s) {
+            wsSessions.remove(session);
+        }
+
+        @Override
+        public void onWebSocketConnect(Session session) {
+            this.session = session;
+            wsSessions.add(session);
+        }
+
+        @Override
+        public void onWebSocketError(Throwable throwable) {
+        }
+    }
+
+    // do metody main z przykładu z punktu o statycznych zasobach musimy dodać:
+    public static void main(...) {
+      ...
+        ServletContextHandler servletHandler = new ServletContextHandler();
+        // nowa linijka:
+        servletHandler.addServlet(MyWebSocketServlet.class, "/ws");
+
+        servletHandler.addServlet(MySerlet.class, "/*");
+        servletHandler.setContextPath("/rest");
+        ...
+      }
+```
+
+JavaScript:
+```javascript
+// WebSockety potrzebują bezwzględnego URLa:
+var url = "ws://" + window.location.host + window.location.pathname + "rest/ws";
+
+var websocket = new WebSocket(url);
+websocket.onopen = function(evt) { console.log("open"); };
+websocket.onclose = function(evt) { console.log("close"); };
+websocket.onmessage = function(evt) { console.log(evt.data); };
+websocket.onerror = function(evt) { console.log("error!") };
+```
