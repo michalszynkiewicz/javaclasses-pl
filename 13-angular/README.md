@@ -191,11 +191,11 @@ imports: [
 
 Stwórzmy nowy formularz w `src/app/new-data/new-data.component.html`:
 ```html
-<form (submit)="addData()">
+<form (submit)="save()">
   <label for="name">Name</label>
-  <input type="text" id="name" [(ngModel)]="newData.name"/>
+  <input type="text" id="name" name="name" [(ngModel)]="newData.name"/>
   <label for="number">Number</label>
-  <input type="text" id="number" [(ngModel)]="newData.number"/>
+  <input type="text" id="number" name="number" [(ngModel)]="newData.number"/>
 
   <button type="submit">Save</button>
 </form>
